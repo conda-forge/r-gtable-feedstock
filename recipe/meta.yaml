@@ -1,5 +1,4 @@
 {% set version = '0.2.0' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,28 +9,29 @@ package:
 source:
   fn: gtable_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/gtable_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/gtable/gtable_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/gtable_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/gtable/gtable_{{ version }}.tar.gz
   sha256: 801e4869830ff3da1d38e41f5a2296a54fc10a7419c6ffb108582850c701e76f
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('gtable')"  # [not win]
+    - $R -e "library('gtable')"           # [not win]
     - "\"%R%\" -e \"library('gtable')\""  # [win]
 
 about:
@@ -39,8 +39,13 @@ about:
   license: GPL-2
   summary: Tools to make it easier to work with "tables" of 'grobs'.
   license_family: GPL2
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
