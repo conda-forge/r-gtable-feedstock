@@ -14,9 +14,8 @@ Summary: Tools to make it easier to work with "tables" of 'grobs'.
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-gtable-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-gtable-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-gtable-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-gtable-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-gtable-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-gtable-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-gtable-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-gtable-feedstock)
 
 Current release info
 ====================
