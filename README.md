@@ -1,13 +1,13 @@
 About r-gtable
 ==============
 
-Home: https://CRAN.R-project.org/package=gtable
+Home: https://github.com/r-lib/gtable
 
 Package license: GPL-2
 
 Feedstock license: BSD 3-Clause
 
-Summary: Tools to make it easier to work with "tables" of 'grobs'.
+Summary: Tools to make it easier to work with "tables" of 'grobs'. The 'gtable' package defines a 'gtable' grob class that specifies a grid along with a list of grobs and their placement in the grid. Further the package makes it easy to manipulate and combine 'gtable' objects so that  complex compositions can be build up sequentially.
 
 
 
@@ -116,10 +116,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@bgruening](https://github.com/bgruening/)
-* [@cbrueffer](https://github.com/cbrueffer/)
 * [@conda-forge/r](https://github.com/conda-forge/r/)
-* [@daler](https://github.com/daler/)
-* [@jdblischak](https://github.com/jdblischak/)
-* [@johanneskoester](https://github.com/johanneskoester/)
 
