@@ -1,4 +1,4 @@
-{% set version = '0.3.0' %}
+{% set version = "0.3.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/gtable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/gtable/gtable_{{ version }}.tar.gz
-  sha256: fd386cc4610b1cc7627dac34dba8367f7efe114b968503027fb2e1265c67d6d3
+  sha256: 8bd62c5722d5188914d667cabab12991c555f657f4f5ce7b547571ae3aec7cb5
 
 build:
-  merge_build_host: True  # [win]
-  number: 3
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -36,12 +36,10 @@ test:
 about:
   home: https://github.com/r-lib/gtable
   license: GPL-2
-  summary: Tools to make it easier to work with "tables" of 'grobs'. The 'gtable' package defines
-    a 'gtable' grob class that specifies a grid along with a list of grobs and their
-    placement in the grid. Further the package makes it easy to manipulate and combine
-    'gtable' objects so that  complex compositions can be build up sequentially.
+  summary: Tools to make it easier to work with "tables" of 'grobs'. The 'gtable' package defines a 'gtable' grob class that specifies a grid along with a list of grobs and their placement in the grid. Further the package makes it easy to manipulate and combine 'gtable' objects so that  complex compositions can be build
+    up sequentially.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
