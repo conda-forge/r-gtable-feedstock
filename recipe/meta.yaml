@@ -28,13 +28,13 @@ requirements:
     - r-cli
     - r-glue
     - r-lifecycle
-    - r-lang
+    - r-rlang
   run:
     - r-base
     - r-cli
     - r-glue
     - r-lifecycle
-    - r-lang
+    - r-rlang
 
 test:
   commands:
