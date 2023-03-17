@@ -1,11 +1,11 @@
-About r-gtable
-==============
+About r-gtable-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gtable-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/r-lib/gtable
 
 Package license: GPL-2
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gtable-feedstock/blob/main/LICENSE.txt)
 
 Summary: Tools to make it easier to work with "tables" of 'grobs'. The 'gtable' package defines a 'gtable' grob class that specifies a grid along with a list of grobs and their placement in the grid. Further the package makes it easy to manipulate and combine 'gtable' objects so that  complex compositions can be build up sequentially.
 
