@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/gtable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/gtable/gtable_{{ version }}.tar.gz
-  sha256: 8bd62c5722d5188914d667cabab12991c555f657f4f5ce7b547571ae3aec7cb5
+  sha256: 8d478f7dfb4e6dcf80ad0e277b028bd29c565f6666f0aa83f9decfede71626c8
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -25,8 +25,16 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
+    - r-cli
+    - r-glue
+    - r-lifecycle
+    - r-rlang
   run:
     - r-base
+    - r-cli
+    - r-glue
+    - r-lifecycle
+    - r-rlang
 
 test:
   commands:
@@ -34,35 +42,16 @@ test:
     - "\"%R%\" -e \"library('gtable')\""  # [win]
 
 about:
-  home: https://github.com/r-lib/gtable
-  license: GPL-2
+  home: https://gtable.r-lib.org
+  dev_url: https://github.com/r-lib/gtable
+  license: MIT
   summary: Tools to make it easier to work with "tables" of 'grobs'. The 'gtable' package defines a 'gtable' grob class that specifies a grid along with a list of grobs and their placement in the grid. Further the package makes it easy to manipulate and combine 'gtable' objects so that  complex compositions can be build
     up sequentially.
-  license_family: GPL2
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_family: MIT
+  license_file: 
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: gtable
-# Title: Arrange 'Grobs' in Tables
-# Version: 0.3.0
-# Authors@R:  c(person(given = "Hadley", family = "Wickham", role = c("aut", "cre"), email = "hadley@rstudio.com"), person(given = "Thomas Lin", family = "Pedersen", role = "aut", email = "thomas.pedersen@rstudio.com"), person(given = "RStudio", role = "cph"))
-# Description: Tools to make it easier to work with "tables" of 'grobs'. The 'gtable' package defines a 'gtable' grob class that specifies a grid along with a list of grobs and their placement in the grid. Further the package makes it easy to manipulate and combine 'gtable' objects so that  complex compositions can be build up sequentially.
-# License: GPL-2
-# Depends: R (>= 3.0)
-# Imports: grid
-# Suggests: covr, testthat, knitr, rmarkdown, ggplot2, profvis
-# Encoding: UTF-8
-# RoxygenNote: 6.1.1
-# Collate: 'new-data-frame.r' 'add-grob.r' 'add-rows-cols.r' 'add-space.r' 'grid.r' 'gtable-layouts.r' 'gtable-package.R' 'gtable.r' 'rbind-cbind.r' 'utils.r' 'trim.r' 'filter.r' 'align.r' 'padding.r' 'z.r'
-# URL: https://github.com/r-lib/gtable
-# BugReports: https://github.com/r-lib/gtable/issues
-# VignetteBuilder: knitr
-# NeedsCompilation: no
-# Packaged: 2019-03-25 14:56:43 UTC; thomas
-# Author: Hadley Wickham [aut, cre], Thomas Lin Pedersen [aut], RStudio [cph]
-# Maintainer: Hadley Wickham <hadley@rstudio.com>
-# Repository: CRAN
-# Date/Publication: 2019-03-25 19:50:02 UTC
