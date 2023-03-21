@@ -1,4 +1,4 @@
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/gtable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/gtable/gtable_{{ version }}.tar.gz
-  sha256: 8d478f7dfb4e6dcf80ad0e277b028bd29c565f6666f0aa83f9decfede71626c8
+  sha256: 2f9a58d978e2a487b7fd8841539ea33cf948e55ddf6f7a9bd2dd3362600a7b3a
 
 build:
   merge_build_host: true  # [win]
@@ -48,7 +48,7 @@ about:
   summary: Tools to make it easier to work with "tables" of 'grobs'. The 'gtable' package defines a 'gtable' grob class that specifies a grid along with a list of grobs and their placement in the grid. Further the package makes it easy to manipulate and combine 'gtable' objects so that  complex compositions can be build
     up sequentially.
   license_family: MIT
-  license_file: 
+  license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
